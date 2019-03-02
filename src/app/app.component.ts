@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'timer-app';
+  isListView = false;
+  
+  public changeState(): void{
+    this.isListView = !this.isListView;
+  }
 }
