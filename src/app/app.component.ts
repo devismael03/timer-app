@@ -24,7 +24,6 @@ export class AppComponent {
   public addToList(): void{
     this.service.add();
     this.stopwatches = this.service.getAll();
-    console.log(this.stopwatches);
   }
 
   public remove(id: number): void{
