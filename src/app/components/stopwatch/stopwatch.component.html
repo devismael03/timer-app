@@ -1,0 +1,16 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">
+        {{hours ? (hours > 9 ? hours : "0"+ hours) : "00"}}:
+        {{minutes ? (minutes > 9 ? minutes : "0"+ minutes) : "00"}}:
+        {{seconds ? (seconds > 9 ? seconds : "0"+ seconds) : "00"}}.
+        {{milliseconds ? (milliseconds > 9 ? (100 > milliseconds ? "0" + milliseconds : milliseconds) : "00"+ milliseconds) : "000"}}
+
+      </h1>
+      <br>
+      <br>
+      <button type="button" class="btn btn-success btn-lg" (click)="startTimer();">Start/Resume</button>
+      <button type="button" class="btn btn-danger btn-lg" (click)="stopTimer();">Stop</button>
+      <button type="button" class="btn btn-warning btn-lg" (click)="resetTimer();">Reset</button>
+    </div>
+  </div>

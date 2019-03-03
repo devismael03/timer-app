@@ -1,5 +1,5 @@
 <div>
-  <div class="jumbotron jumbotron-fluid">
+  <div *ngIf="!isListView" class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">⌛ TIMER APP ⌛</h1>
       <p class="lead">SIMPLEST STOPWATCH APP YOU HAVE EVER SEEN 🔥</p>
@@ -9,15 +9,17 @@
   <div class="container">
     
     <ul class="nav nav-tabs">
-      <li class="nav-item"><a href="#" [class.active]="!isListView" class="nav-link" (click)="changeState();">Single Stopwatch ⏱️</a></li>
-      <li class="nav-item"><a href="#" [class.active]="isListView" class="nav-link" (click)="changeState();">List View 📃</a></li>
+      <li class="nav-item"><a href="#" [class.active]="!isListView" class="nav-link" (click)="changeState();"><strong>Single Stopwatch ⏱️</strong></a></li>
+      <li class="nav-item"><a href="#" [class.active]="isListView" class="nav-link" (click)="changeState();"><strong>List View 📃</strong></a></li>
     </ul>
         
   </div>
   <div *ngIf="!isListView; else listView">
-
-
+    <br>
+    <app-stopwatch></app-stopwatch>
   </div>
   
-  <ng-template #listView></ng-template>
+  <ng-template #listView>
+    
+  </ng-template>
 </div>
