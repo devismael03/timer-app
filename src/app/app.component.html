@@ -16,10 +16,14 @@
   </div>
   <div *ngIf="!isListView; else listView">
     <br>
-    <app-stopwatch></app-stopwatch>
+    <app-stopwatch [isInListView]="false"></app-stopwatch>
   </div>
   
   <ng-template #listView>
-    
+    <button type="button" class="btn btn-info btn-lg float-right" (click)="addToList();">➕</button>
+    <br>
+    <br>
+    <br>
+    <app-stopwatch (delete)="remove($event)" *ngFor="let stopwatch of stopwatches" [id]="stopwatch.id" [isInListView]="true"></app-stopwatch>
   </ng-template>
 </div>

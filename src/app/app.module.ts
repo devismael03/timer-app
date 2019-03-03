@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { StopwatchComponent } from './components/stopwatch/stopwatch.component';
+import { StopwatchService } from './services/stopwatch.service';
 
 @NgModule({
   declarations: [

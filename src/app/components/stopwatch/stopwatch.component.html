@@ -1,5 +1,6 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
+      <button *ngIf="isInListView" type="button" class="btn btn-warning btn-lg float-right" (click)="deleteFromList();">❌</button>
       <h1 class="display-4">
         {{hours ? (hours > 9 ? hours : "0"+ hours) : "00"}}:
         {{minutes ? (minutes > 9 ? minutes : "0"+ minutes) : "00"}}:

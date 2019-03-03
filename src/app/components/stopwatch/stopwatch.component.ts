@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Stopwatch } from 'src/app/models/stopwatch';
 
 @Component({
   selector: 'app-stopwatch',
@@ -12,7 +13,12 @@ export class StopwatchComponent{
   public minutes:number;
   public hours:number;
   public stopped: boolean;
+  @Input()
   public isInListView: boolean;
+  @Input()
+  public id: number;
+  @Output()
+  delete = new EventEmitter<number>();
   public t = null;
   constructor(){
     this.milliseconds = 0;
@@ -57,5 +63,11 @@ export class StopwatchComponent{
     this.stopped = false;
     clearInterval(this.t);
     this.t = null;
+  }
+  
+  public deleteFromList(): void{
+    if(this.isInListView){
+      this.delete.emit(this.id);
+    }
   }
 }
